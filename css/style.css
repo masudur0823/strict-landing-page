@@ -1,5 +1,414 @@
-*{
-    margin: 0;
-    padding: 0;
-    outline: 0;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+/*--------------- common css start ---------------- */
+/* ------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: "Lato", sans-serif;
+}
+
+:root {
+  --theme-color: #15a3f9;
+  --title-color: #2d3950;
+  --paragraph-color: #999999;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+
+p {
+  color: var(--paragraph-color);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+input{
+    background: transparent;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.btn_blue {
+  border: 1px solid #15a3f9;
+  padding: 20px 30px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 2px;
+  transition: all linear 0.3s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn_blue::before {
+  position: absolute;
+  content: "";
+  left: -100%;
+  top: 0px;
+  background: var(--theme-color);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all linear 0.3s;
+}
+
+.btn_blue:hover::before {
+  left: 0%;
+}
+
+.btn_blue::after {
+  position: absolute;
+  content: "";
+  right: -100%;
+  top: 0px;
+  background: var(--theme-color);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all linear 0.3s;
+}
+
+.btn_blue:hover::after {
+  right: 0%;
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.heading p {
+  font-size: 15px;
+  margin-top: 20px;
+}
+/* ------------------------------------------------ */
+/*--------------- common css end ------------------ */
+
+/*--------------- header css start ---------------- */
+/* ------------------------------------------------ */
+header {
+  height: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #252525;
+}
+/* ------------------------------------------------ */
+/*--------------- header css end ------------------ */
+
+/*--------------- banner css start ---------------- */
+/* ------------------------------------------------ */
+#banner {
+  background: url(../images/banner.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#banner h1 {
+  font-size: 120px;
+  font-weight: bold;
+  margin-bottom: 70px;
+  color: #fff;
+}
+
+#banner p {
+  height: 60px;
+  color: #fff;
+}
+
+#banner .arrow-down {
+  display: block;
+  margin: 0 auto;
+  margin-top: 170px;
+}
+/* ------------------------------------------------ */
+/*--------------- banner css end ------------------ */
+
+/*--------------- simple css start ---------------- */
+/* ------------------------------------------------ */
+#simple {
+  background: #f6f9f9;
+  padding: 75px 0px;
+  text-align: center;
+}
+
+#simple h1 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+#simple p {
+  font-size: 20px;
+  font-weight: 400;
+}
+/* ------------------------------------------------ */
+/*--------------- simple css end ------------------ */
+
+/*--------------- info css start ---------------- */
+/* ------------------------------------------------ */
+#info {
+  padding: 65px 0px;
+  background: #fff;
+}
+
+#info .card-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 33px;
+  justify-content: center;
+}
+
+#info .card-main .card {
+  width: 298px;
+  text-align: center;
+}
+
+#info .card-main .card .icon-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+  background-color: #5fc3ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+#info .card-main .card .icon-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+#info .card-main .card .icon-container::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-color: #48baff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#info .card h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+#info .card p {
+  font-size: 15px;
+  margin-top: 20px;
+}
+/* ------------------------------------------------ */
+/*--------------- info css end ------------------ */
+
+/*--------------- showcase css start ---------------- */
+/* ------------------------------------------------ */
+#showcase {
+  padding: 70px 0px;
+  background: #f6f9f9;
+}
+
+#showcase .card-main {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+#showcase .card-main .card {
+  width: 300px;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#showcase .card-main .card .card-img {
+  height: 260px;
+  object-fit: cover;
+}
+
+#showcase .card-main .card .overlay {
+  background: rgba(21, 161, 249, 0.9);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  transition: all linear 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#showcase .card-main .card:hover .overlay {
+  gap: 10px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#showcase .card .overlay .icon-btn {
+  border: 1px solid #fff;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+/* ------------------------------------------------ */
+/*--------------- showcase css end ------------------ */
+
+/*--------------- contact css start ---------------- */
+/* ------------------------------------------------ */
+#contact {
+  background: url(../images/contact_banner.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#contact .overlay{
+    background: rgba(45, 57, 79, 0.90);
+    padding: 70px 0px;
+    
+}
+
+#contact .form-container{
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+
+#contact .input_field{
+    padding: 25px;
+    border: 1px solid var(--paragraph-color);
+    font-size: 15px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#contact form{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#contact .input_field::placeholder{
+    color: var(--paragraph-color);
+}
+
+#contact .form_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#contact .form_footer .btn_blue{
+    padding: 15px 50px;
+}
+
+#contact .form_footer .check-container{
+    color: #f5f9f9;
+    font-size: 15px;
+}
+/* ------------------------------------------------ */
+/*--------------- contact css end ------------------ */
+
+
+.footer_main{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .social_main{
+    display: flex;
+    gap: 10px;
+}
+
+footer .social_container{
+   background: var(--theme-color);
+   width: 40px;
+   height: 40px;
+   border-radius: 2px;
+   box-sizing: border-box;
+   display: flex;
+    justify-content: center;
+    align-items: center;
 }
